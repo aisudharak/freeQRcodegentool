@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh18400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>QR Code Generator</title>\
+    <style>\
+        body \{ font-family: Arial, sans-serif; text-align: center; padding: 20px; \}\
+        #qrcode \{ margin-top: 20px; \}\
+    </style>\
+</head>\
+<body>\
+    <h1>Generate a QR Code</h1>\
+    <input type="text" id="text" placeholder="Enter text or URL" style="padding: 5px; width: 200px;">\
+    <button onclick="generateQR()" style="padding: 5px 10px;">Generate</button>\
+    <div id="qrcode"></div>\
+\
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>\
+    <script>\
+        function generateQR() \{\
+            const text = document.getElementById("text").value;\
+            document.getElementById("qrcode").innerHTML = ""; // Clear previous QR code\
+            if (text) \{\
+                new QRCode(document.getElementById("qrcode"), \{\
+                    text: text,\
+                    width: 128,\
+                    height: 128\
+                \});\
+            \}\
+        \}\
+    </script>\
+</body>\
+</html>}
